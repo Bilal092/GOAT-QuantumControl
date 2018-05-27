@@ -6,7 +6,7 @@ global self;
 % optimized
 
 self.Xv = Xv;
-grad = zeros(self.num_har * self.num_c + 1,1);
+grad = zeros(self.num_har * self.num_c + 3,1);
 
 Y1 = Xv(1:self.num_har * self.num_c);
 Y2 = Xv(self.num_har * self.num_c + 1: end);
@@ -22,11 +22,11 @@ self. w = w;
 if nargout > 1
     [Gradients,UT] = Computations(A, w);
     g = trace(self.Uf'*UT);
-    Fbar  = 1 - 1/4 *real(((trace(self.Uf' * UT))));
+    Fbar  = 1 - 1/4 *abs(((trace(self.Uf' * UT))));
     self.Infid = Fbar;
     
     for i = 1 : self.num_har * self.num_c + 3
-        grad(i) = -1/4*real(trace(self.Uf' * Gradients{i}));
+        grad(i) = -1/4*real((g'/abs(g))*trace(self.Uf' * Gradients{i}));
     end
 %     self.GradT= grad;
 % grad = grad';
@@ -35,7 +35,7 @@ self.GradT = grad;
 else
     
     [~,UT] = Computations(A, w);
-    Fbar  = 1 - 1/4 *real(((trace(self.Uf' * UT))));
+    Fbar  = 1 - 1/4 *abs(((trace(self.Uf' * UT))));
     self.Infid = Fbar;
     
 end

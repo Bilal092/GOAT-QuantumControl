@@ -25,15 +25,15 @@ self.Ho = 0.1 * self.szz;
 
 self.num_har = 8;
 self.num_c =3;
-%  rng(0);
+ rng(23);
  
  
 self.r  = rand(self.num_har,self.num_c);
-self.w  = rand(self.num_c, 1) ;
+self.w  = rand(self.num_c, 1);
 
 self.ti  = 0;
-self.tf = 8;
-self.steps = 10000;
+self.tf = 20;
+self.steps = 5000;
 self.tspan = linspace(self.ti, self. tf, self.steps);
 % self.tspan = [0 8]
 
@@ -67,15 +67,15 @@ self.state = [];
 self.infidelity = [];
 self.searchdir = [];
                        
-self.X = (rand(self.num_har, self.num_c)-0.5);
-X = self.X(:);
-X  = cat(1, X, self.w);
+self.X = 1*(ones(self.num_har, self.num_c)-0.5);
+self.X = self.X(:);
+self.X  = cat(1, self.X, self.w);
 
 %
 
-U = eye(4);
-M0 =zeros(16 + (1 * 16 *  self.num_c * self.num_har + 48),1);
-M0(1:16)=U(:);
+% U = eye(4);
+% M0 =zeros(16 + (1 * 16 *  self.num_c * self.num_har + 48),1);
+% M0(1:16)=U(:);
 % opt = odeset('RelTol',1e-11,'AbsTol',1e-11,'Stats','on');
 % [t,M] = ode45(@(t,M) Evolution(t,M, self.A , self.w), self.tspan, M0,opt);
 
@@ -106,7 +106,7 @@ options = optimoptions('fminunc',...
     'PlotFcns',@optimplotfval...
     );
 
-[x,fval,exitflag,output] = fminunc(@Cost,X,options);
+[x,fval,exitflag,output] = fminunc(@Cost,self.X,options);
 
 
 % options = optimset('MaxIter', 5000,...
@@ -115,4 +115,6 @@ options = optimoptions('fminunc',...
 %     'SpecifyObjectiveGradient',true, 'FunctionTolerance', 1e-9);
 % [x,fval,exitflag,output] = fsolve(@Cost,X,options);
 
+%%
 
+save('GOAT6_L', 'self')
