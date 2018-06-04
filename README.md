@@ -19,6 +19,8 @@ Structure of Code is described below:
 5. Remaining functions are used to plot and analyze results.
 
 
+https://github.com/Bilal092/GOAT-QuantumControl/blob/master/GOAT.gif
+
 This implementation is inspired from:
 
 https://link.aps.org/doi/10.1103/PhysRevLett.120.150401
