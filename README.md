@@ -8,7 +8,7 @@ Structure of Code is described below:
 
 1. main.m is the main script, which initilizes global stucture self, which holds all the variables of optimization, it acts as base for all the calculations carried out in the optimization process.
 
-2. Evolution.m is the vectorized dynamical evolution of system and dynamical gradients, which solved using Runge-Kutta type integrator, it is called from Computations.m
+2. Evolution.m is the vectorized dynamical evolution of system and dynamical gradients, which solved using Runge-Kutta type integrator, it is invoked from Computations.m
 
 3. Computations.m converts vectorized evolution to matrices and returns unitary evolution operator along with its derivatives with respect to control parameters.
 
