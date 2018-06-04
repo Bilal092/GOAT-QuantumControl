@@ -1,7 +1,5 @@
 GOAT based Implementation of quantum gates in Spin systems
 
-https://link.aps.org/doi/10.1103/PhysRevLett.120.150401
-
 email : bilalriaz at live dot com
 
 Gradients are computed analytically, whereas Hessians are approximated using MATLAB' builtin BFGS type optimization
@@ -17,4 +15,10 @@ Structure of Code is described below:
 4. Cost.m uses outputs from computations.m to compute infidelity and gradients
 
 5. Remaining functions are used to plot and analyze results.
+
+
+This implementation is inspired from:
+
+https://link.aps.org/doi/10.1103/PhysRevLett.120.150401
+
 
