@@ -14,6 +14,8 @@ Structure of Code is described below:
 
 4. Cost.m uses outputs from computations.m to compute infidelity and gradients
 
+5. outfun.m is ouput function to store infidelity and state.
+
 5. Remaining functions are used to plot and analyze results.
 
 
