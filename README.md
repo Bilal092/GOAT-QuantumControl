@@ -20,5 +20,3 @@ Structure of Code is described below:
 This implementation is inspired from:
 
 https://link.aps.org/doi/10.1103/PhysRevLett.120.150401
-
-
