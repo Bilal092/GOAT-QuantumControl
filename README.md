@@ -1,4 +1,4 @@
-# CRAB-GOAT  
+#GOAT  
 
 
 Implementation of Gradient Based optimization in truncated fourier basis
