@@ -20,7 +20,7 @@ Structure of Code is described below:
 
 Here is pseudocode of our implementation:
 
-![](https://github.com/Bilal092/GOAT-QuantumControl/blob/master/GOAT.PNG)
+![](https://github.com/Bilal092/GOAT-QuantumControl/blob/master/GOAT.png)
 
 This implementation is inspired from:
 
