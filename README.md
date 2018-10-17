@@ -6,11 +6,11 @@ Gradients are computed analytically, whereas Hessians are approximated using MAT
 
 Structure of Code is described below:
 
-1. main.m is the main script, which initilizes global stucture self, which holds all the variables of optimization, it acts as base for all the calculations carried out in the optimization process.
+1. main.m is the main script, which initilizes global stucture self to hold all the variables of optimization, it acts as base for all the calculations carried out in the optimization process.
 
-2. Evolution.m is the vectorized dynamical evolution of system and dynamical gradients, which solved using Runge-Kutta type integrator, it is invoked from Computations.m
+2. Evolution.m is the vectorized dynamical evolution of system and dynamical gradients, which are solved using Runge-Kutta type integrator, it is invoked from Computations.m
 
-3. Computations.m converts vectorized evolution to matrices and returns unitary evolution operator along with its derivatives with respect to control parameters.
+3. Computations.m converts vectorized evolution to matrices and returns unitary evolution operator along with its partial-derivatives with respect to control parameters.
 
 4. Cost.m uses outputs from computations.m to compute infidelity and gradients
 
@@ -18,7 +18,7 @@ Structure of Code is described below:
 
 5. Remaining functions are used to plot and analyze results.
 
-Here is pseudocode of our implementation:
+Here is flowchart of our implementation:
 
 ![](https://github.com/Bilal092/GOAT-QuantumControl/blob/master/GOAT.png)
 
