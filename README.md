@@ -1,6 +1,5 @@
 GOAT based Implementation of quantum gates in Spin systems
 
-email : bilalriaz at live dot com
 
 Gradients are computed analytically, whereas Hessians are approximated using MATLAB's built-in (fminunc) BFGS type optimization .
 
